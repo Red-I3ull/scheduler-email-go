@@ -103,9 +103,9 @@ func runJob(db *sql.DB) {
 		m.SetBody("text/plain", "Hello from notmason!")
 		m.SetAddressHeader("Cc", emailsmtp, "Vandrey")
 
-		m.SetHeader("Subject", "Щоденний пароль")
-		m.SetBody("text/plain", fmt.Sprintf("Ваш пароль на сьогодні: %s", entrypass))
-		m.AddAlternative("text/html", fmt.Sprintf("<b>Ваш пароль:</b> %s", entrypass))
+		m.SetHeader("Subject", "Daily Password")
+		m.SetBody("text/plain", fmt.Sprintf("Your password: %s", entrypass))
+		m.AddAlternative("text/html", fmt.Sprintf("<b>Your password:</b> %s", entrypass))
 
 		d := gomail.NewDialer("smtp.gmail.com", 587, emailsmtp, passsmtp)
 
